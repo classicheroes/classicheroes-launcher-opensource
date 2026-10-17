@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #111;
+}
+
+.launcher {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    background-image:
+        url("../../assets/background.png");
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+}
+
+.window-controls {
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    right:
+        20px;
+
+    display:
+        flex;
+
+    gap:
+        5px;
+
+    z-index:
+        100;
+}
+
+.window-controls button {
+    width:
+        38px;
+
+    height:
+        32px;
+
+    border:
+        none;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color:
+        white;
+
+    font-size:
+        20px;
+
+    cursor:
+        pointer;
+}
+
+.window-controls button:hover {
+    background:
+        rgba(0, 0, 0, 0.9);
+}
+
+#closeButton:hover {
+    background:
+        #c62828;
+}
+
+.language {
+    position:
+        absolute;
+
+    top:
+        60px;
+
+    right:
+        20px;
+
+    display:
+        flex;
+
+    gap:
+        5px;
+
+    z-index:
+        100;
+}
+
+.language-button {
+    border:
+        none;
+
+    padding:
+        8px 13px;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color:
+        white;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+}
+
+.language-button:hover {
+    background:
+        rgba(0, 0, 0, 0.9);
+}
+
+.language-button.active {
+    background:
+        #f2a900;
+
+    color:
+        #111;
+}
+
+.logo {
+    width:
+        420px;
+
+    max-height:
+        180px;
+
+    object-fit:
+        contain;
+
+    margin-top:
+        45px;
+}
+
+.content {
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        45px;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        420px;
+
+    text-align:
+        center;
+
+    color:
+        white;
+}
+
+.content h1 {
+    font-size:
+        34px;
+
+    letter-spacing:
+        3px;
+
+    text-shadow:
+        2px 2px 4px black;
+}
+
+.content p {
+    margin-top:
+        8px;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        17px;
+
+    text-shadow:
+        1px 1px 3px black;
+}
+
+.token-container {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    margin-bottom:
+        12px;
+}
+
+#tokenInput {
+    width:
+        100%;
+
+    height:
+        50px;
+
+    padding:
+        0 50px 0 16px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.35);
+
+    outline:
+        none;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+}
+
+#tokenInput:focus {
+    border-color:
+        #f2a900;
+}
+
+#tokenInput::placeholder {
+    color:
+        rgba(255, 255, 255, 0.6);
+}
+
+#showTokenButton {
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        0;
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+}
+
+#playButton {
+    width:
+        100%;
+
+    height:
+        55px;
+
+    border:
+        none;
+
+    font-size:
+        22px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    background:
+        #f2a900;
+
+    color:
+        #111;
+
+    transition:
+        0.2s;
+}
+
+#playButton:hover:not(:disabled) {
+    background:
+        #ffbd19;
+
+    transform:
+        scale(1.02);
+}
+
+#playButton:disabled {
+    opacity:
+        0.45;
+
+    cursor:
+        not-allowed;
+}
+
+.download-container {
+    margin-top:
+        15px;
+}
+
+#downloadStatus {
+    margin-bottom:
+        8px;
+
+    font-size:
+        13px;
+}
+
+.progress {
+    width:
+        100%;
+
+    height:
+        8px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+}
+
+.progress-bar {
+    width:
+        0%;
+
+    height:
+        100%;
+
+    background:
+        #f2a900;
+
+    transition:
+        width 0.15s linear;
+}
+
+#downloadInfo {
+    margin-top:
+        6px;
+
+    font-size:
+        12px;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+}
+
+#status {
+    margin-top:
+        10px;
+
+    font-size:
+        13px;
+}

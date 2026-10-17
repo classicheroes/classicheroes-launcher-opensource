@@ -1,0 +1,57 @@
+{
+  "name": "classic-heroes-launcher",
+  "version": "1.0.0",
+  "description": "Classic Heroes Launcher",
+  "main": "src/main.js",
+  "productName": "Classic Heroes",
+  "author": "Classic Heroes",
+  "license": "by k3miki",
+
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "extract-zip": "^2.0.1"
+  },
+
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  },
+
+  "build": {
+    "appId": "com.classicheroes.launcher",
+    "productName": "Classic Heroes",
+
+    "asar": true,
+
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "manifest.json"
+    ],
+
+    "extraResources": [
+      {
+        "from": "anticheat",
+        "to": "anticheat"
+      }
+    ],
+
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Classic Heroes"
+    }
+  }
+}
